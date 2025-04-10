@@ -3,44 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Web Sencilla</title>
+    <title>Subir Tareas</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
         }
 
         header {
-            background-color: #333;
+            background-color: #4CAF50;
             color: white;
-            padding: 15px;
             text-align: center;
-        }
-
-        nav {
-            background-color: #444;
-            padding: 10px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px;
-            margin: 5px;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: #333;
+            padding: 20px;
         }
 
         main {
             padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .upload-container {
             background-color: white;
-            margin: 10px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 500px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 10px;
+            display: block;
+            color: #555;
+        }
+
+        input[type="file"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
             border-radius: 5px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #45a049;
         }
 
         footer {
@@ -52,61 +80,29 @@
             bottom: 0;
             width: 100%;
         }
-
-        button {
-            padding: 10px 20px;
-            font-size: 16px;
-            background-color: #5cb85c;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        button:hover {
-            background-color: #4cae4c;
-        }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>Bienvenido a Mi Página Web</h1>
+        <h1>Sube tus Tareas</h1>
     </header>
 
-    <nav>
-        <a href="#inicio">Inicio</a>
-        <a href="#sobre-mi">Sobre mí</a>
-        <a href="#contacto">Contacto</a>
-    </nav>
-
     <main>
-        <section id="inicio">
-            <h2>Inicio</h2>
-            <p>Esta es una página web sencilla creada con HTML, CSS y JavaScript.</p>
-        </section>
-
-        <section id="sobre-mi">
-            <h2>Sobre mí</h2>
-            <p>Soy un entusiasta del desarrollo web, siempre buscando aprender algo nuevo.</p>
-        </section>
-
-        <section id="contacto">
-            <h2>Contacto</h2>
-            <p>Si deseas ponerte en contacto, ¡no dudes en enviarme un mensaje!</p>
-            <button onclick="mostrarAlerta()">¡Haz clic aquí!</button>
-        </section>
+        <div class="upload-container">
+            <h2>Formulario para Subir Archivos</h2>
+            <form action="/ruta-de-subida" method="POST" enctype="multipart/form-data">
+                <label for="fileUpload">Selecciona una imagen o documento</label>
+                <input type="file" id="fileUpload" name="fileUpload" accept=".jpg, .jpeg, .png, .pdf, .docx, .pptx">
+                <button type="submit">Subir Archivo</button>
+            </form>
+        </div>
     </main>
 
     <footer>
-        <p>&copy; 2025 Mi Sitio Web</p>
+        <p>&copy; 2025 Subida de Tareas - Todos los derechos reservados</p>
     </footer>
-
-    <script>
-        function mostrarAlerta() {
-            alert("Gracias por hacer clic en el botón de contacto.");
-        }
-    </script>
 
 </body>
 </html>
+
